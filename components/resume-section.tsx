@@ -5,16 +5,22 @@ import { Button } from "@/components/ui/button"
 
 const experience = [
   {
-    title: "Firmware Engineer Intern",
-    company: "Robotics Startup",
-    period: "Summer 2025",
-    description: "Developed embedded firmware for autonomous navigation systems.",
+    title: "Firmware Engineer",
+    company: "RoboJackets, RoboCup Division",
+    period: "August 2025 - Present",
+    description: "Developing low-latency Rust firmware, optimizing motorboards, and implementing pulsed signal processing for competitive robotics.",
   },
   {
-    title: "RoboJackets Member",
-    company: "Georgia Tech",
-    period: "2023 - Present",
-    description: "Contributing to firmware development for competitive robots.",
+    title: "Team Lead",
+    company: "VEX Robotics",
+    period: "Sept. 2019 - May 2025",
+    description: "Engineered competitive robots by developing custom high-torque mechanisms and programming autonomous navigation algorithms.",
+  },
+  {
+    title: "Director of Systems Engineering",
+    company: "InstaTrainVR",
+    period: "July 2024 - July 2025",
+    description: "Led an agile team and overhauled monolithic backend architecture using Node.js and Redis to cut API response times.",
   },
 ]
 
@@ -22,20 +28,34 @@ const education = [
   {
     degree: "B.S. Computer Engineering",
     institution: "Georgia Institute of Technology",
-    period: "2022 - 2026",
-    details: "Focus: Embedded Systems & Robotics",
+    period: "Graduating: Class of 2028",
+    details: "Concentration: Computing Hardware & Emerging Architecture and Distributed Systems & Software Design",
   },
 ]
 
 const skills = [
   "C/C++",
+  "Rust",
   "Python",
-  "Embedded Systems",
-  "PCB Design",
-  "ROS",
-  "Git",
-  "RTOS",
-  "ARM Cortex",
+  "SystemVerilog",
+  "Verilog",
+  "Java",
+  "TypeScript",
+  "ROS/ROS 2",
+  "Gazebo",
+  "PCB Design (KiCad)",
+  "FPGAs",
+  "Microcontrollers (ARM, ESP32)",
+  "Sensor Fusion",
+  "Next.js",
+  "React",
+  "PostgreSQL",
+  "Docker",
+  "AWS (EC2/S3)",
+  "Linux (Ubuntu)",
+  "Git/GitHub",
+  "LangChain",
+  "TensorFlow"
 ]
 
 export function ResumeSection() {
@@ -128,7 +148,7 @@ export function ResumeSection() {
                   Full Resume
                 </h3>
                 <p className="text-muted-foreground">
-                  Download my complete 1-page ECE Career Fair resume
+                Download a complete overview of my engineering experience and technical projects
                 </p>
               </div>
             </div>
@@ -137,7 +157,11 @@ export function ResumeSection() {
               className="gap-2 bg-primary text-primary-foreground hover:bg-primary/90 transition-all hover:scale-105"
               asChild
             >
-              <a href="/resume.pdf" download>
+              <a
+                href="/Ishan_resume.pdf"
+                download="Ishan_Voleti_resume.pdf"
+                type="application/pdf"
+              >
                 <Download size={20} />
                 Download PDF
               </a>

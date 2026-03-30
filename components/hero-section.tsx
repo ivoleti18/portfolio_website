@@ -52,7 +52,7 @@ export function HeroSection() {
               Hi, I&apos;m <span className="text-primary">Ishan Voleti</span>
             </h1>
             <p className="text-lg md:text-xl text-muted-foreground leading-relaxed max-w-2xl mb-8">
-              A Computer Engineering student at Georgia Tech, concentrating in Computer Hardware & Emerging Architecture and Distributed Systems & Software Design.
+              A Computer Engineering student at Georgia Tech, concentrating in Computing Hardware & Emerging Architecture and Distributed Systems & Software Design.
               <br />
               <br />
               My work and interests span autonomous robotics, firmware development, and digital design. I love bridging the gap between hardware and software to create innovative solutions that push the boundaries of what&apos;s possible.

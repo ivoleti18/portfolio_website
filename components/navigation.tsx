@@ -51,7 +51,7 @@ export function Navigation() {
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           <a href="#home" className="text-lg font-semibold text-foreground hover:text-primary transition-colors">
-            Ishan
+            Ishan Voleti
           </a>
 
           {/* Desktop Navigation */}

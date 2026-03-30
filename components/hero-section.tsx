@@ -6,17 +6,17 @@ import { Button } from "@/components/ui/button"
 
 const socialLinks = [
   {
-    href: "https://linkedin.com/in/",
+    href: "https://www.linkedin.com/in/ishan-voleti/",
     icon: Linkedin,
     label: "LinkedIn",
   },
   {
-    href: "https://github.com/",
+    href: "https://github.com/ivoleti18",
     icon: Github,
     label: "GitHub",
   },
   {
-    href: "mailto:ishan@example.com",
+    href: "mailto:ivoleti18@gmail.com",
     icon: Mail,
     label: "Email",
   },
@@ -34,8 +34,8 @@ export function HeroSection() {
           <div className="relative">
             <div className="w-48 h-48 md:w-64 md:h-64 rounded-full overflow-hidden border-4 border-primary/30 shadow-2xl shadow-primary/10">
               <Image
-                src="/profile.jpg"
-                alt="Ishan - Computer Engineering Student"
+                src="/profile.png"
+                alt="Ishan Voleti - Computer Engineering Student"
                 width={256}
                 height={256}
                 className="object-cover w-full h-full"
@@ -49,13 +49,13 @@ export function HeroSection() {
           <div className="flex-1 text-center md:text-left">
             <p className="text-primary font-medium mb-2 tracking-wide">Welcome</p>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-6 text-balance">
-              Hi, I&apos;m <span className="text-primary">Ishan</span>
+              Hi, I&apos;m <span className="text-primary">Ishan Voleti</span>
             </h1>
             <p className="text-lg md:text-xl text-muted-foreground leading-relaxed max-w-2xl mb-8">
-              A Computer Engineering student at Georgia Tech passionate about robotics, 
-              firmware, and autonomous systems. I love bridging the gap between hardware 
-              and software to create innovative solutions that push the boundaries of 
-              what&apos;s possible.
+              A Computer Engineering student at Georgia Tech, concentrating in Computer Hardware & Emerging Architecture and Distributed Systems & Software Design.
+              <br />
+              <br />
+              My work and interests span autonomous robotics, firmware development, and digital design. I love bridging the gap between hardware and software to create innovative solutions that push the boundaries of what&apos;s possible.
             </p>
 
             {/* Social Links */}

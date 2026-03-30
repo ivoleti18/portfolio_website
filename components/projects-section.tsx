@@ -5,6 +5,9 @@ import Image from "next/image"
 import { ExternalLink, Github, X, ChevronLeft, ChevronRight, Play } from "lucide-react"
 import { Button } from "@/components/ui/button"
 
+/** Modal gallery fit: `contain` shows the full image (good for diagrams); `cover` fills the frame (may crop). */
+type GalleryObjectFit = "contain" | "cover"
+
 interface Project {
   id: string
   title: string
@@ -12,6 +15,8 @@ interface Project {
   fullDescription: string
   image: string
   gallery: string[]
+  /** Omit for default `contain`. Set `cover` if you want a photo-style cropped fill in the modal. */
+  galleryObjectFit?: GalleryObjectFit
   videoUrl?: string
   tags: string[]
   githubUrl?: string
@@ -20,71 +25,70 @@ interface Project {
 
 const projects: Project[] = [
   {
-    id: "robojackets",
-    title: "RoboJackets Firmware",
-    shortDescription: "Firmware development for competitive robotics platform",
-    fullDescription: `As a member of RoboJackets at Georgia Tech, I've been instrumental in developing and maintaining the firmware that powers our competitive robots. This project involves working with embedded systems, real-time operating systems, and sensor integration.
-
-My contributions include implementing motor control algorithms, developing communication protocols between subsystems, and optimizing code for performance on resource-constrained microcontrollers. The firmware handles everything from sensor data processing to actuator control, ensuring precise and reliable robot operation during competition.
-
-Working on this project has deepened my understanding of real-time systems, taught me valuable lessons about code reliability in safety-critical applications, and given me hands-on experience with team-based embedded development using version control and code review processes.
-
-Key technical challenges included debugging hardware-software integration issues, implementing fault-tolerant systems, and achieving microsecond-level timing precision for motor control loops.`,
-    image: "/projects/robojackets.jpg",
-    gallery: ["/projects/robojackets.jpg", "/projects/robojackets-2.jpg", "/projects/robojackets-3.jpg"],
-    tags: ["C++", "Embedded", "RTOS", "Motor Control"],
-    githubUrl: "https://github.com/",
-  },
-  {
     id: "stinger-tug",
-    title: "Marine Robotics Stinger Tug",
-    shortDescription: "Autonomous surface vessel for marine operations",
-    fullDescription: `The Stinger Tug is an autonomous surface vessel developed as part of Georgia Tech's Marine Robotics program. This project focuses on creating a reliable, autonomous tugboat capable of performing various marine operations.
+    title: "Autonomous Marine Vehicle (Stinger Tug)",
+    shortDescription: "Fully autonomous surface vehicle featuring custom power distribution and LiDAR navigation",
+    fullDescription: `I am actively engineering a fully autonomous surface vehicle as part of the Marine Robotics Group. Building an autonomous system for a water environment introduces unique physics and navigation challenges compared to ground robots.
 
-My role involved developing the navigation and control systems, including GPS-based waypoint navigation, obstacle avoidance using sonar and lidar sensors, and automated docking procedures. The system integrates multiple sensor inputs to create a robust perception pipeline.
+The software backbone of the vessel relies on ROS 2. I developed and integrated custom navigation nodes using Python and C++ to control the vehicle's movement. By tuning these systems, we achieved a cross-track navigation error of less than 10 centimeters, meaning the boat can follow a strict plotted path with incredible accuracy despite water resistance. I also integrated an RPLIDAR sensor and wrote obstacle avoidance algorithms that allow the vessel to identify and navigate through goal gates with a 95 percent success rate.
 
-The vessel uses a custom-designed propulsion system with differential steering, allowing for precise maneuvering in tight spaces. I implemented a state machine architecture for mission management, enabling the boat to handle complex multi-step operations autonomously.
-
-Testing was conducted in controlled water environments, iterating on control parameters and sensor fusion algorithms to achieve reliable performance in varying conditions including waves and wind.`,
-    image: "/projects/stinger-tug.jpg",
-    gallery: ["/projects/stinger-tug.jpg", "/projects/stinger-tug-2.jpg", "/projects/stinger-tug-3.jpg"],
-    videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ",
-    tags: ["Python", "ROS", "Navigation", "Sensors"],
-    githubUrl: "https://github.com/",
+On the hardware side, I designed and fabricated a custom Printed Circuit Board (PCB) using KiCad to manage the physical components. The board handles 5V and 12V power distribution across the entire system. It also serves as the central hub for our sensor array, directly interfacing the Inertial Measurement Unit (IMU) and GPS sensors to the main Raspberry Pi compute unit via I2C and UART protocols.`,
+    image: "/projects/stinger-tug.png",
+    gallery: ["/projects/stinger-tug.png"],
+    // gallery: ["/projects/robojackets.jpg", "/projects/robojackets-2.jpg", "/projects/robojackets-3.jpg"],
+    tags: ["ROS 2", "Python", "PCB Design", "Sensor Fusion"],
+    githubUrl: "https://github.com/ivoleti18/stinger-software",
   },
   {
-    id: "spindl",
-    title: "Spindl",
-    shortDescription: "Hardware startup for smart textile manufacturing",
-    fullDescription: `Spindl is an entrepreneurial venture aimed at revolutionizing textile manufacturing through smart automation. As a co-founder and lead engineer, I developed the embedded systems that power our intelligent spinning machines.
+    id: "siliconjackets",
+    title: "ASIC Design & Verification (SiliconJackets)",
+    shortDescription: "64-bit hardware calculator design and comprehensive modular verification environment",
+    fullDescription: `Hardware is only as good as the tests that prove it works. In this project with SiliconJackets, I focused on both the Register-Transfer Level (RTL) design and the rigorous verification of an Application-Specific Integrated Circuit (ASIC).
 
-The project combines IoT connectivity, machine learning for quality control, and advanced motor control systems. Our platform enables real-time monitoring of production metrics, predictive maintenance scheduling, and automated quality assurance.
+I started by designing a 64-bit calculator using SystemVerilog. To handle complex operations, I implemented a custom Finite State Machine (FSM). This FSM sequences multi-cycle additions, allowing the hardware to break down and process large mathematical operations systematically over several clock cycles.
 
-I designed the hardware architecture from the ground up, including custom PCBs for motor drives and sensor interfaces. The software stack includes embedded C firmware, a Python-based backend for data processing, and a React dashboard for visualization.
+Once the design was complete, the main challenge was proving its reliability. I constructed a highly modular verification environment from scratch. This environment included a custom Driver, Monitor, and Scoreboard to independently inject data, observe the outputs, and check them against expected results to validate functional correctness.
 
-This venture has taught me invaluable lessons about taking a technical concept from prototype to product, managing hardware supply chains, and balancing engineering decisions with business constraints.`,
-    image: "/projects/spindl.jpg",
-    gallery: ["/projects/spindl.jpg", "/projects/spindl-2.jpg", "/projects/spindl-3.jpg"],
-    tags: ["IoT", "PCB Design", "Startup", "ML"],
-    liveUrl: "https://spindl.com/",
+To ensure the calculator would not fail under edge cases, I utilized constrained random testing alongside SystemVerilog Assertions. This automated testing approach hammered the design with thousands of unique scenarios, ultimately allowing us to achieve a 98 percent functional coverage score and proving the architecture was sound.`,
+    image: "/projects/silicon.png",
+    gallery: ["/projects/silicon.png", "/projects/silicon-2.png", "/projects/silicon-3.jpg", "/projects/silicon-4.png", "/projects/silicon-5.png"],
+    // videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ",
+    tags: ["SystemVerilog", "RTL Design", "ASIC Verification", "FSM"],
+    githubUrl: "https://github.com/ivoleti18/",
   },
   {
-    id: "ugahacks-loop",
-    title: "UGAHacks Loop",
-    shortDescription: "Award-winning hackathon project for transit optimization",
-    fullDescription: `Loop is a transit optimization platform developed during UGAHacks, where it won recognition for innovation and technical execution. The project addresses inefficiencies in campus transportation systems.
+    id: "loop",
+    title: "Loop (1st Place, Solana Track @ UGAHacks XI)",
+    shortDescription: "Trustless scavenger hunt platform using Solana smart contracts and AI-generated quests",
+    fullDescription: `Loop is an award-winning project built during the UGAHacks XI hackathon, where my team won first place in the Solana development track. We wanted to build a real-world, location-based game that was entirely decentralized and automated.
 
-Using real-time GPS data from campus buses, machine learning prediction models, and a user-friendly mobile interface, Loop provides students with accurate arrival time predictions and suggests optimal routes based on current conditions.
+We architected a trustless scavenger hunt application on the Solana blockchain. I wrote the smart contracts using Anchor (a Rust framework) and utilized Program Derived Addresses (PDAs) to manage the automated distribution of prizes once a user completed a hunt.
 
-I led the backend development, implementing a RESTful API for data ingestion and processing, training ML models for arrival time prediction, and designing the database schema for efficient query performance. The system processes thousands of data points per minute to maintain prediction accuracy.
+To bridge the blockchain with the physical world, we had to verify a user's actual location. I integrated Haversine logic into the application to calculate the spherical distance between coordinates, allowing us to validate GPS locations within a 100-meter accuracy. As players move around the real world, their positions are synced in real-time across the platform using a Supabase backend.
 
-The 36-hour development sprint taught me rapid prototyping techniques, effective team collaboration under pressure, and how to scope features appropriately for time-constrained development.`,
-    image: "/projects/loop.jpg",
-    gallery: ["/projects/loop.jpg", "/projects/loop-2.jpg", "/projects/loop-3.jpg"],
-    videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ",
-    tags: ["React", "Python", "ML", "API"],
-    githubUrl: "https://github.com/",
-    liveUrl: "https://loop.dev/",
+Finally, we wanted the game to be infinitely replayable. I developed an AI route generator using the Google Gemini API. This integration takes a user's starting location and automatically creates dynamic, localized quests with customized difficulty levels, ensuring no two games are ever exactly the same.`,
+    image: "/projects/loop-1.jpg",
+    videoUrl: "https://www.youtube.com/embed/rKCG-HJhy4Y",
+    gallery: ["/projects/loop-1.jpg", "/projects/loop-2.jpg", "projects/loop-3.jpg", "projects/loop-4.jpg", "projects/loop-5.jpg", "projects/loop-6.jpg"],
+    tags: ["Rust", "Solana", "Next.js", "AI", "Blockchain"],
+    liveUrl: "https://uga-hacks-xi-mu3f.vercel.app/",
+    githubUrl: "https://github.com/vingupta22/Loop---On-Chain-Location-Bounties",
+  },
+  {
+    id: "rag-dashboard",
+    title: "RAG-Powered Recruitment Dashboard",
+    shortDescription: "Full-stack platform using LLMs and semantic search to match organization members with mentors",
+    fullDescription: `Managing a large organization requires efficient ways to connect people with the right resources. I developed a RAG-powered (Retrieval-Augmented Generation) recruitment dashboard to solve this problem for a network of over 150 members and mentors.
+
+The core of the application is a full-stack platform built with Next.js on the frontend and Express.js on the backend. This system acts as a central repository, managing and storing over 100 individual interview insights and member profiles.
+
+To make this data actually useful, I implemented a vector database using PostgreSQL and the pgvector extension. By utilizing LangChain and Google Gemini Embeddings, the system converts text data from resumes and profiles into numerical vectors. This allows the dashboard to perform semantic searches, matching mentees with the ideal mentors based on the actual context and meaning of their experience, rather than just matching simple keywords.
+
+To make the user experience seamless, I optimized the search architecture using Hierarchical Navigable Small World (HNSW) indexing. This advanced database structure keeps the semantic search latency under 100 milliseconds, providing instant results even when querying through hundreds of complex resumes.`,
+    image: "/projects/resume-dashboard.jpg",
+    gallery: ["/projects/resume-dashboard.jpg"],
+    tags: ["Next.js", "LangChain", "PostgreSQL", "Vector Search"],
+    githubUrl: "https://github.com/ivoleti18/resume_app/tree/main",
   },
 ]
 
@@ -197,12 +201,16 @@ export function ProjectsSection() {
             </button>
 
             {/* Image Gallery */}
-            <div className="relative aspect-video">
+            <div className="relative aspect-video bg-muted/40">
               <Image
                 src={selectedProject.gallery[currentImageIndex]}
                 alt={`${selectedProject.title} - Image ${currentImageIndex + 1}`}
                 fill
-                className="object-cover"
+                className={
+                  (selectedProject.galleryObjectFit ?? "contain") === "cover"
+                    ? "object-cover"
+                    : "object-contain"
+                }
               />
               {selectedProject.gallery.length > 1 && (
                 <>

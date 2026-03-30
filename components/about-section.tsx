@@ -4,24 +4,24 @@ import { Cpu, Code, Lightbulb, Rocket } from "lucide-react"
 
 const highlights = [
   {
-    icon: Cpu,
-    title: "Hardware Design",
-    description: "PCB design, embedded systems, and microcontroller programming",
-  },
-  {
-    icon: Code,
-    title: "Software Development",
-    description: "Full-stack development, firmware, and system architecture",
-  },
-  {
     icon: Lightbulb,
-    title: "Innovation",
-    description: "Creative problem-solving and entrepreneurial mindset",
+    title: "Firmware Engineering",
+    description: "Microcontroller programming with Rust, C/C++, and RTOS",
   },
   {
     icon: Rocket,
-    title: "Robotics",
-    description: "Autonomous systems, control theory, and sensor integration",
+    title: "Autonomous Robotics",
+    description: "ROS 2 navigation, obstacle avoidance, and sensor integration",
+  },
+  {
+    icon: Cpu,
+    title: "Digital Design & Verification",
+    description: "ASIC design, SystemVerilog, and hardware architecture testing",
+  },
+  {
+    icon: Code,
+    title: "Full-Stack & AI Integration",
+    description: "Scalable backends, Next.js, and LLM semantic search",
   },
 ]
 

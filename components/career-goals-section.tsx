@@ -4,31 +4,31 @@ import { Check, Circle } from "lucide-react"
 
 const milestones = [
   {
-    year: "2024",
+    year: "Current",
     title: "Foundation Building",
-    description: "Complete core ECE coursework and gain hands-on experience through student organizations like RoboJackets and Marine Robotics.",
-    status: "completed",
-  },
-  {
-    year: "2025",
-    title: "Industry Experience",
-    description: "Secure internships at leading robotics or embedded systems companies. Apply classroom knowledge to real-world engineering challenges.",
+    description: "Mastering embedded systems and autonomous navigation through my coursework and hands-on engineering in on-campus organizations.",
     status: "current",
   },
   {
     year: "2026",
-    title: "Graduation & Full-Time Role",
-    description: "Graduate from Georgia Tech with honors and transition into a full-time role as a Firmware or Robotics Engineer.",
+    title: "Industry Experience",
+    description: "Secure a summer internship in firmware development, digital design, or embedded software to build scalable physical systems.",
     status: "upcoming",
   },
   {
     year: "2028",
+    title: "Graduation & Full-Time Role",
+    description: "Graduating from Georgia Tech to build complex architecture as a full-time Firmware, Hardware, or Robotics Engineer.",
+    status: "upcoming",
+  },
+  {
+    year: "2030",
     title: "Technical Leadership",
     description: "Advance to a senior engineering position, leading teams and driving innovation in autonomous systems or hardware development.",
     status: "upcoming",
   },
   {
-    year: "2030+",
+    year: "2031+",
     title: "Entrepreneurial Venture",
     description: "Leverage technical expertise and industry connections to co-found a robotics or deep-tech startup solving meaningful problems.",
     status: "upcoming",

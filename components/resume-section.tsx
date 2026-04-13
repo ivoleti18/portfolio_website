@@ -158,7 +158,7 @@ export function ResumeSection() {
               asChild
             >
               <a
-                href="/Ishan_resume.pdf"
+                href="/Ishan_Voleti_resume.pdf"
                 download="Ishan_Voleti_resume.pdf"
                 type="application/pdf"
               >

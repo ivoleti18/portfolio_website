@@ -33,7 +33,7 @@ const projects: Project[] = [
 The software backbone of the vessel relies on ROS 2. I developed and integrated custom navigation nodes using Python and C++ to control the vehicle's movement. By tuning these systems, we achieved a cross-track navigation error of less than 10 centimeters, meaning the boat can follow a strict plotted path with incredible accuracy despite water resistance. I also integrated an RPLIDAR sensor and wrote obstacle avoidance algorithms that allow the vessel to identify and navigate through goal gates with a 95 percent success rate.
 
 On the hardware side, I designed and fabricated a custom Printed Circuit Board (PCB) using KiCad to manage the physical components. The board handles 5V and 12V power distribution across the entire system. It also serves as the central hub for our sensor array, directly interfacing the Inertial Measurement Unit (IMU) and GPS sensors to the main Raspberry Pi compute unit via I2C and UART protocols.`,
-    image: "/projects/stinger-tug.png",
+    image: "/projects/stinger-tug-1.png",
     gallery: ["/projects/stinger-tug-1.png","/projects/stinger-tug-4.png","/projects/stinger-tug-2.JPG", "/projects/stinger-tug-3.JPG"],
     // gallery: ["/projects/robojackets.jpg", "/projects/robojackets-2.jpg", "/projects/robojackets-3.jpg"],
     tags: ["ROS 2", "Python", "PCB Design", "Sensor Fusion"],

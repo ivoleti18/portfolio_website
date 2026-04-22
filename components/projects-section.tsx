@@ -34,7 +34,7 @@ The software backbone of the vessel relies on ROS 2. I developed and integrated 
 
 On the hardware side, I designed and fabricated a custom Printed Circuit Board (PCB) using KiCad to manage the physical components. The board handles 5V and 12V power distribution across the entire system. It also serves as the central hub for our sensor array, directly interfacing the Inertial Measurement Unit (IMU) and GPS sensors to the main Raspberry Pi compute unit via I2C and UART protocols.`,
     image: "/projects/stinger-tug.png",
-    gallery: ["/projects/stinger-tug-1.png","/projects/stinger-tug-2.JPG", "/projects/stinger-tug-3.JPG"],
+    gallery: ["/projects/stinger-tug-1.png","/projects/stinger-tug-4.png","/projects/stinger-tug-2.JPG", "/projects/stinger-tug-3.JPG"],
     // gallery: ["/projects/robojackets.jpg", "/projects/robojackets-2.jpg", "/projects/robojackets-3.jpg"],
     tags: ["ROS 2", "Python", "PCB Design", "Sensor Fusion"],
     githubUrl: "https://github.com/ivoleti18/stinger-software",

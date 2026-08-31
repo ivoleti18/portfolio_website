@@ -4,14 +4,14 @@ import { Cpu, Code, Lightbulb, Rocket } from "lucide-react"
 
 const highlights = [
   {
+    icon: Rocket,
+    title: "Autonomous Robotics",
+    description: "ROS 2 navigation, SLAM, and sensor integration",
+  },
+  {
     icon: Lightbulb,
     title: "Firmware Engineering",
     description: "Microcontroller programming with Rust, C/C++, and RTOS",
-  },
-  {
-    icon: Rocket,
-    title: "Autonomous Robotics",
-    description: "ROS 2 navigation, obstacle avoidance, and sensor integration",
   },
   {
     icon: Cpu,
@@ -20,8 +20,8 @@ const highlights = [
   },
   {
     icon: Code,
-    title: "Full-Stack & AI Integration",
-    description: "Scalable backends, Next.js, and LLM semantic search",
+    title: "Research & Perception",
+    description: "3D reconstruction, SLAM-adjacent pipelines, and computer vision for autonomous systems",
   },
 ]
 
@@ -43,22 +43,13 @@ export function AboutSection() {
           {/* Biography */}
           <div className="space-y-6">
             <p className="text-muted-foreground leading-relaxed text-lg">
-              Growing up, I was always the kid who took apart gadgets just to see how they worked. 
-              That curiosity led me to Georgia Tech, where I&apos;m pursuing Computer Engineering with 
-              a focus on embedded systems and robotics.
+              Growing up, I was always the kid who took apart gadgets just to see how they worked. That curiosity led me to Georgia Tech, where I&apos;m pursuing Computer Engineering with a focus on embedded systems and robotics.
             </p>
             <p className="text-muted-foreground leading-relaxed text-lg">
-              My journey spans from late-night firmware debugging sessions to pitching startup ideas 
-              at hackathons. I believe the most impactful solutions emerge at the intersection of 
-              hardware and software, where lines of code translate directly into physical movement 
-              and real-world impact.
+              My journey spans from late-night firmware debugging sessions to pitching startup ideas at hackathons. I believe the most impactful solutions emerge at the intersection of hardware and software, where lines of code translate directly into physical movement and real-world impact.
             </p>
             <p className="text-muted-foreground leading-relaxed text-lg">
-              Beyond the technical realm, I&apos;m driven by entrepreneurship. I&apos;ve co-founded projects, 
-              led engineering teams, and constantly seek opportunities where technology can create 
-              meaningful change. Whether it&apos;s building autonomous marine vehicles or developing 
-              firmware for competitive robots, I approach every challenge with the same passion 
-              and determination.
+               Beyond the technical realm, I&apos;m driven by entrepreneurship. I&apos;ve co-founded projects, led engineering teams, and constantly seek opportunities where technology can create meaningful change. Whether it&apos;s building autonomous marine vehicles, developing firmware for competitive robots, or building 3D-reconstruction pipelines for autonomous mapping research, I approach every challenge with the same passion and determination.
             </p>
           </div>
 

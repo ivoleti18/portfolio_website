@@ -5,22 +5,22 @@ import { Button } from "@/components/ui/button"
 
 const experience = [
   {
+    title: "Robotics Research Assistant",
+    company: "Zhou Lab, Drexel University",
+    period: "April 2026 - August 2026",
+    description: "Built an automated 360°-video-to-3D-reconstruction pipeline using COLMAP and Gaussian Splatting for autonomous robot mapping.",
+  },
+  {
     title: "Firmware Engineer",
     company: "RoboJackets, RoboCup Division",
-    period: "August 2025 - Present",
-    description: "Developing low-latency Rust firmware, optimizing motorboards, and implementing pulsed signal processing for competitive robotics.",
+    period: "August 2025 - May 2026",
+    description: "Developed low-latency Rust firmware, optimizing motorboards and implementing pulsed signal processing for competitive robotics.",
   },
   {
-    title: "Team Lead",
-    company: "VEX Robotics",
-    period: "Sept. 2019 - May 2025",
-    description: "Engineered competitive robots by developing custom high-torque mechanisms and programming autonomous navigation algorithms.",
-  },
-  {
-    title: "Director of Systems Engineering",
-    company: "InstaTrainVR",
-    period: "July 2024 - July 2025",
-    description: "Led an agile team and overhauled monolithic backend architecture using Node.js and Redis to cut API response times.",
+    title: "Engineering Lead (Software & Mechanical)",
+    company: "VEX Robotics Competition",
+    period: "January 2023 - May 2025",
+    description: "Programmed closed-loop PID and sensor fusion algorithms while machining custom mechanisms.",
   },
 ]
 
@@ -39,23 +39,17 @@ const skills = [
   "Python",
   "SystemVerilog",
   "Verilog",
-  "Java",
-  "TypeScript",
   "ROS/ROS 2",
   "Gazebo",
-  "PCB Design (KiCad)",
+  "SLAM",
   "FPGAs",
+  "PCB Design (KiCad)",
   "Microcontrollers (ARM, ESP32)",
   "Sensor Fusion",
-  "Next.js",
-  "React",
-  "PostgreSQL",
+  "PyTorch/TensorFlow",
   "Docker",
-  "AWS (EC2/S3)",
   "Linux (Ubuntu)",
-  "Git/GitHub",
-  "LangChain",
-  "TensorFlow"
+  "Git/GitHub"
 ]
 
 export function ResumeSection() {

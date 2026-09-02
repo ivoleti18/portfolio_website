@@ -135,7 +135,7 @@ export function ProjectsSection() {
           </h2>
           <div className="w-16 h-1 bg-primary mx-auto rounded-full mb-4" />
           <p className="text-muted-foreground max-w-2xl mx-auto">
-            A collection of projects across firmware, autonomous robotics, and digital design, as well as full-stack and AI integration.
+              A collection of projects across autonomous robotics, embedded firmware, and digital design — plus a few full-stack and AI builds along the way.
           </p>
         </div>
 

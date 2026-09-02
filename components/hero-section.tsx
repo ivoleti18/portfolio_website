@@ -55,7 +55,7 @@ export function HeroSection() {
               A Computer Engineering student at Georgia Tech, concentrating in Computing Hardware & Emerging Architecture and Distributed Systems & Software Design.
               <br />
               <br />
-              My work and interests span autonomous robotics, firmware development, and digital design. I love bridging the gap between hardware and software to create innovative solutions that push the boundaries of what&apos;s possible.
+              I'm super interested in full-stack robotics, embedded firmware, and digital design, including ASIC and FPGA work. I've genuinely enjoyed every experience I've had in these spaces, and I think it's because they let me build things that matter, not just prototypes, but systems that can actually sense, think, and move on their own. That mix of innovation and real potential is what keeps me hooked!
             </p>
 
             {/* Social Links */}
